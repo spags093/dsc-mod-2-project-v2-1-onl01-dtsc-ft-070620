@@ -183,7 +183,7 @@ After reviewing the data, we have found that the features that are most importan
   - <b> Condition: </b> The overall condition of the house also tends to affect the sale price.  If a house has a perfect 5 condition grade, it will add 23,521.84 to the sale price.  
 
 #### Coefficient by Feature
-![Coefficients by Feature](./itop features.png.png)
+![Coefficients by Feature](./top features.png)
 > This barplot shows the top 5 features and their level of coefficients.  
 
 
