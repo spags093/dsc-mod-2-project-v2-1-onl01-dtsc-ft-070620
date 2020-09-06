@@ -5,6 +5,7 @@
 
 The contents of this repository detail an analysis of the Module 2 Project of the Data Science program at Flatiron School. This analysis is detailed in hopes of making the work accessible and replicable.
 
+<center><img src="fb_logo_rect.jpg"></center>
 
 ### Business problem:
 
@@ -158,6 +159,15 @@ This baseline produced an r-squared of 0.682 and also showed several insignifica
 #### Model Validation
 In order to validate the accuracy of this model, I separated the data into train and test sets and ran each.  At this point, the train set returned an r-squared of 0.676 and the test set produced an r-squared of 0.699.  Despite the passable r-squared, the QQ-plots and scatter plots produced for both did still show some irregularities.  My attempts to address normality and homoscedasticity are still ongoing and I hope to improve on this model in the future.  
 
+##### QQ Plot
+<img src="qq.png">
+> This is the QQ Plot of the model.  
+
+##### Scatter Plot
+<img src="scatter.png">
+> This scatterplot is to check for homoscedasticity.  
+
+
 The next step in model validation was to run a scikit-learn cross validation test on the model.  There was a lot of blood, sweat, and tears put into getting Statsmodels and Scikit-learn to play nice with each other and we were able to get some guidance on this from <a href="https://sukhbinder.wordpress.com/2018/08/07/cross-validation-score-with-statsmodels/">this helpful blog.</a>.  Once we were able to get that squared (or r-squared...terrible) away, we ran the Cross Validation test and found our score to be 0.678.  
 ```
 X = df_dummies.drop(['price'], axis = 1)
@@ -182,10 +192,19 @@ After reviewing the data, we have found that the features that are most importan
   - <b> Basement: </b> The presence of a basement in the house is another feature that added considerable value.  If a house in King County has a basement, the sale price is expected to increase by 25,934.89 <br><br>
   - <b> Condition: </b> The overall condition of the house also tends to affect the sale price.  If a house has a perfect 5 condition grade, it will add 23,521.84 to the sale price.  
 
-#### Coefficient by Feature
-![Coefficients by Feature](./top features.png)
+### Result Plots
+
+#### Top 5 Features
+<img src="top features.png">
 > This barplot shows the top 5 features and their level of coefficients.  
 
+#### Coefficient by Grade
+<img src="grade.png">
+> This barplot shows the coefficients of grades 7-9.  
+
+#### Coefficient by Top Zipcodes
+<img src="zipcode.png">
+> This barplot shows the coefficients of the top zipcodes.  
 
 ## Recommendations:
 
